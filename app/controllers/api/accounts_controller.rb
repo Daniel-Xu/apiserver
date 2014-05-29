@@ -41,7 +41,7 @@ module API
       end
     end
 
-    def delete 
+    def destroy 
       account = Account.find(params[:id])
       account.destroy
       head 204

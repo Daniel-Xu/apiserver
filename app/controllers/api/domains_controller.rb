@@ -42,7 +42,7 @@ module API
       end
     end
 
-    def delete 
+    def destroy 
       domain = Domain.find(params[:id])
       domain.destroy
       head 204
