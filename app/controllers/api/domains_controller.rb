@@ -50,7 +50,7 @@ module API
 
     private 
       def domain_params
-        params.require(:domain).permit(:hostname, :ipaddr)
+        params.require(:domain).permit(:hostname, :ip, :account_id)
       end
 
   end
