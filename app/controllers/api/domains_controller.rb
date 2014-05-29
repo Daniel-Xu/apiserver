@@ -48,6 +48,14 @@ module API
       head 204
     end
 
+    def async_domain_update
+      host_name = params[:hostname]
+      new_ip = params[:ip]
+      Resque.enqueue(HandleDomain, host_name, new_ip)
+      
+      head 200
+    end
+
     private 
       def domain_params
         params.require(:domain).permit(:hostname, :ip, :account_id)
