@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   #subdomain
   
   namespace :api, path: '/', constraints: {subdomain: 'api'} do
-    resources accounts
-    resources domains
+    resources :accounts
+    resources :domains
   end
 end
 
